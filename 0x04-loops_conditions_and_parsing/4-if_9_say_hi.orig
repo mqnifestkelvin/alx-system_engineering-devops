@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+<<<<<<< HEAD
+# using the if statement along side loops
+i=0
+while [ $i -lt 10 ]
+do
+	if [ $i -eq 9 ]
+=======
+# printing using loops and conditionals
+i=0
+while [ $i -lt 10 ];
+do
+	if [ $i -eq 9 ]; 
+>>>>>>> f4cb67ce64708f14bffcda729f5d918ac7192b5d
+	then
+		echo "Hi"
+	fi
+	echo "Best School"
+	i=$((i+1))
+<<<<<<< HEAD
+=======
+	
+>>>>>>> f4cb67ce64708f14bffcda729f5d918ac7192b5d
+done
