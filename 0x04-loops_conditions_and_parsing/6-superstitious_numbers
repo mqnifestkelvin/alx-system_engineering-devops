@@ -5,6 +5,7 @@
 # printing "bad luck from Italy" after 17
 
 i=0
+
 while [ $i -le 20 ]
 do
 	echo "$i"
