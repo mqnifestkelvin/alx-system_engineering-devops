@@ -1,24 +1,14 @@
-sh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDW1InM0YRi7dmLpkO/4tzxfV0DcSA7hKPIx7XY+nIZoxUIHPO+pa8S0Buv7n6RHnoOhxAQs1AgIBa3BXzxjBkJE+NZWWPlSGwqELYbljo5ZMeknwFf4NDpOrLyhW1/NrYtiabIzGjPow2LItpL2bSupJW3kjffQO7KTRn4MJ8eK2IlCD/EA5nvm5hkp2/Qj0gqoSWsBvYIpWD8fHdxIMjhdzlcqx+VZ/1/BJfqs3H7jD62reVIrACEdT90dZbWe6Pj6D07wJKd56VV/9CdIGLYuzjkwBjQg54F7AV/xEsOlRMb4Sinh3TsumVQwwwVnNBUuukW+1AhQ2oiONg+QUcq0UIQRdE3VIKOn73ug0oOsUZy95q6y3vmMNijXwP2PkG4Ixa/t9qByXt4RdboG7mMXzawvrt9hXM/lehnPIgUhO7Ki8e/Y4486P3aZ3oL7Vd6IPmwC+RKE1EWOpQgHxZybtwDBYh24S5bfit4goBQRnZXa+OTIc8xIe0Nz+Xo9M0= firdaus@Firdaus-PC:wq!/usr/bin/env bash
-<<<<<<< HEAD
-# using the if statement along side loops
-i=0
-while [ $i -lt 10 ]
+#!/usr/bin/env bash
+# Displays 'Best School'. Displays Hi on the 9th iteration
+
+index=0
+
+while [ $index -lt 10 ]
 do
-	if [ $i -eq 9 ]
-=======
-# printing using loops and conditionals
-i=0
-while [ $i -lt 10 ];
-do
-	if [ $i -eq 9 ]; 
->>>>>>> f4cb67ce64708f14bffcda729f5d918ac7192b5d
-	then
-		echo "Hi"
-	fi
-	echo "Best School"
-	i=$((i+1))
-<<<<<<< HEAD
-=======
-	
->>>>>>> f4cb67ce64708f14bffcda729f5d918ac7192b5d
+  if [ $index -eq 9 ]
+  then
+    echo "Hi"
+  fi
+  echo "Best School"
+  (( index++ ))
 done
