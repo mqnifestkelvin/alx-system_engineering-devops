@@ -1,10 +1,13 @@
-# Install puppet-lint package
-package { 'python3-pip':
-  ensure => installed,
-  require => Package['python3'],
+include python
+
+# Ensure pip is present
+class { 'python::pip':
+  ensure => present,
 }
 
-package { 'puppet-lint':
+# Install Flask 2.1.0
+python::pip { 'flask':
   ensure   => '2.1.0',
-  provider => 'gem',
+  pkgname  => 'Flask',
+  provider => 'pip',
 }
