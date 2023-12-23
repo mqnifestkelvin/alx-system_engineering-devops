@@ -9,5 +9,5 @@ class { 'python::pip':
 python::pip { 'flask':
   ensure   => '2.1.0',
   pkgname  => 'Flask',
-  provider => 'pip',
+  provider => 'pip3',
 }
