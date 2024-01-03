@@ -1,19 +1,6 @@
 #!/usr/bin/env bash
-# Installs nginx on a server and configures a HelloWorld HTML file
-
-# Update package lists
+# installs nginx
 apt-get -y update
-
-# Install Nginx
 apt-get -y install nginx
-
-# Create or overwrite the index.html file with "Hello World!"
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
-
-# Reload or restart Nginx to ensure the latest configuration is used
-if pgrep nginx > /dev/null 2>&1
-then
-    service nginx reload
-else
-    service nginx start
-fi
+echo "Hello World" > /var/www/html/index.nginx-debian.html
+service nginx start
