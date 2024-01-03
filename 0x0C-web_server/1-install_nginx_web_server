@@ -1,17 +1,7 @@
-#!/bin/bash
-
-# Update package list and upgrade packages
-apt-get update -y
-apt-get upgrade -y
-
-# Install Nginx
-apt-get install nginx -y
-
-# Create a custom HTML file
-echo "Hello World!" > /var/www/html/index.html
-
-# Restart Nginx without using systemctl
-service nginx restart
-
-# Ensure Nginx is enabled to start on boot
-update-rc.d nginx defaults
+#!/usr/bin/env bash
+# Install Nginx and the init file have only a message
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install nginx -y
+sudo service nginx start
+echo "Hello World!" | tee /var/www/html/index.nginx-debian.html
