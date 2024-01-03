@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
-# installs nginx
+
+# Install nginx
 apt-get -y update
 apt-get -y install nginx
+
+# Configure nginx to serve a custom HTML page
 echo "Hello World" > /var/www/html/index.nginx-debian.html
-service nginx start
+
+# Ensure nginx is listening on port 80, this is default so no additional configuration required
+
+# Restart nginx (without using systemctl)
+service nginx restart
