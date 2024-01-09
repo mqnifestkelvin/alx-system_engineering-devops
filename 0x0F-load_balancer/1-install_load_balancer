@@ -11,9 +11,9 @@ backend foo
     server 111919-web-01 72.44.62.244:80 check
     server 111919-web-02 54.210.123.54:80 check
 "
-apt-get -y install software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.0
-apt-get -y update
-apt-get -y install haproxy=2.0.\*
+sudo apt-get -y install software-properties-common
+sudo add-apt-repository -y ppa:vbernat/haproxy-2.0
+sudo apt-get -y update
+sudo apt-get -y install haproxy=2.0.\*
 echo "$FOO" >> /etc/haproxy/haproxy.cfg
 service haproxy start
