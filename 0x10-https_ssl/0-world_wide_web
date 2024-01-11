@@ -1,8 +1,30 @@
 #!/usr/bin/env bash
-# Digs domain and option subdomain
+
+# Function to dig a domain or subdomain and format the output
+dig_and_format() {
+    local domain=$1
+    local result=$(dig +short $domain)
+
+    if [ -n "$result" ]; then
+        # Assuming A record for simplicity. Modify as needed for other record types
+        echo "The subdomain $domain is a A record and points to $result"
+    else
+        echo "No information found for $domain"
+    fi
+}
+
+# Main script logic
 if [ $# -eq 1 ]; then
-	domains="www.$1 lb-01.$1 web-01.$1 web-02.$1"
+    # Handle only domain case
+    domain=$1
+    dig_and_format "www.$domain"
+    dig_and_format "lb-01.$domain"
+    dig_and_format "web-01.$domain"
+    dig_and_format "web-02.$domain"
+elif [ $# -eq 2 ]; then
+    # Handle domain and subdomain case
+    subdomain="$2.$1"
+    dig_and_format "$subdomain"
 else
-	domains="$2.$1"
+    echo "Invalid arguments"
 fi
-dig $domains | awk '/ANSWER SECTION:/ { getline; split($1, a, "."); print "The subdomain", a[1], "is a", $4, "record and points to", $5}'
