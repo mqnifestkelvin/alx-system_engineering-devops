@@ -4,7 +4,6 @@ A Script that, uses a REST API, for a given employee ID, returns
 information about his/her TODO list progress
 exporting data in the CSV format.
 """
-
 import csv
 import json
 import requests
@@ -37,4 +36,3 @@ if __name__ == "__main__":
         write = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_ALL)
         for i in json_req:
             write.writerow([idEmp, usr, i.get('completed'), i.get('title')])
-
