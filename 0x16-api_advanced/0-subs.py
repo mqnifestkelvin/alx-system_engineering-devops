@@ -2,6 +2,9 @@
 '''Get number of reddit channel subscribers'''
 
 
+import requests
+
+
 def number_of_subscribers(subreddit):
     """Return the total number of subscribers on a given subreddit.
     If the subreddit is invalid, returns 0."""
