@@ -44,5 +44,4 @@ def print_results(word_list, hot_list):
     words = sorted(list(count.keys()))
     for word in sorted(words,
                        reverse=True, key=lambda k: count[k]):
-        print("{}: {}".format(word, count[word])
-)
+        print("{}: {}".format(word, count[word]))
